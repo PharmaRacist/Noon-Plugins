@@ -1,0 +1,9 @@
+{
+  "name": "Sokoun",
+  "mentainer": "PharmaRacist",
+  "entry": "@plugins/Ambients.qml",
+  "enabled": true,
+  "icon": "equalizer",
+  "expandable": false,
+  "shape": "Cookie12Sided"
+}

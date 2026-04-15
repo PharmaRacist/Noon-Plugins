@@ -1,0 +1,14 @@
+{
+  "name": "Share",
+  "mentainer": "PharmaRacist",
+  "entry": "@plugins/Share.qml",
+  "icon": "share",
+  "expandable": true,
+  "incubatable": false,
+  "detachable": true,
+  "searchable": false,
+  "preExpand": false,
+  "stealth": false,
+  "shape": "Clover4Leaf",
+  "enabled": true
+}

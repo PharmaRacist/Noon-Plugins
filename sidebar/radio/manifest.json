@@ -1,0 +1,9 @@
+{
+  "name": "Radio",
+  "mentainer": "PharmaRacist",
+  "entry": "@plugins/Radio.qml",
+  "enabled": true,
+  "icon": "equalizer",
+  "expandable": false,
+  "shape": "Bun"
+}

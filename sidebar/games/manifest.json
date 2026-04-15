@@ -1,0 +1,16 @@
+{
+  "name": "Games",
+  "mentainer": "PharmaRacist",
+  "entry": "@plugins/Games.qml",
+  "enabled": true,
+  "icon": "joystick",
+  "expandable": true,
+  "incubatable": false,
+  "detachable": true,
+  "searchable": false,
+  "preExpand": false,
+  "baseSize": 480,
+  "expandSize": 800,
+  "stealth": false,
+  "shape": "Ghostish"
+}

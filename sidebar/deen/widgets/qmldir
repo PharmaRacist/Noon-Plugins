@@ -1,0 +1,7 @@
+module Deen.widgets
+AllPrayers 1.0 AllPrayers.qml
+FastingProgress 1.0 FastingProgress.qml
+HijriDay 1.0 HijriDay.qml
+IslamWidgetBase 1.0 IslamWidgetBase.qml
+RandomAyah 1.0 RandomAyah.qml
+RandomZekr 1.0 RandomZekr.qml

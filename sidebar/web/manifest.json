@@ -1,0 +1,16 @@
+{
+  "name": "Web",
+  "mentainer": "PharmaRacist",
+  "entry": "@plugins/WebBrowser.qml",
+  "enabled": false,
+  "icon": "globe",
+  "expandable": true,
+  "incubatable": true,
+  "detachable": true,
+  "searchable": true,
+  "preExpand": false,
+  "async": true,
+  "on_accepted_only": true,
+  "stealth": false,
+  "shape": "Slanted"
+}

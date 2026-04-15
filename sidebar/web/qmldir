@@ -1,0 +1,5 @@
+module Web
+DownloadDelegatedItem 1.0 DownloadDelegatedItem.qml
+DownloadManager 1.0 DownloadManager.qml
+WebBrowserBottomDialog 1.0 WebBrowserBottomDialog.qml
+WebBrowser 1.0 WebBrowser.qml

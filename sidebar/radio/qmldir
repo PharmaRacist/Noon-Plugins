@@ -1,0 +1,3 @@
+module Radio
+Radio 1.0 Radio.qml
+RadioService 1.0 RadioService.qml

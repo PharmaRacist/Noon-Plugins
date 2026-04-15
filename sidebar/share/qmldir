@@ -1,0 +1,4 @@
+module Share
+OptionButton 1.0 OptionButton.qml
+RecieveDialog 1.0 RecieveDialog.qml
+Share 1.0 Share.qml
