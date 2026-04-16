@@ -1,5 +1,3 @@
-import "./"
-import "./ambientSounds"
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -10,73 +8,61 @@ import qs.services
 
 Item {
     id: root
-    
-    property int gridColumns: 1
-    
-    PagePlaceholder {
-        z: -1
-        shown: AmbientSoundsService.activeSounds.length === 0
-        icon: "relax"
-        title: "There is no Active Sounds"
-        description: "swipe below to show available sounds"
-    }
-    
     ColumnLayout {
         anchors.fill: parent
         spacing: Padding.huge
-        
+
         SoundItemContainer {
+            height: 72
+            radius: Rounding.verylarge
+            Layout.fillWidth: true
             soundId: ""
-            soundVolume: AmbientSoundsService.masterVolume
+            soundVolume: AmbientSoundsService.states.masterVolume
             playerPlaying: false
-            effectivePlaying: !AmbientSoundsService.masterPaused
+            effectivePlaying: !AmbientSoundsService.states.masterPaused
             soundInfo: null
             isMaster: true
             isActive: true
         }
-        
-        Separator {
-            visible: AmbientSoundsService.activeSounds.length > 0
-        }
-        
-        // Active sounds
-        ColumnLayout {
+
+        StyledListView {
+            id: activeList
             Layout.fillHeight: true
             Layout.fillWidth: true
             spacing: Padding.normal
-            visible: AmbientSoundsService.activeSounds.length > 0
-            
-            Repeater {
-                id: activeRepeater
-                model: AmbientSoundsService.activeSounds
-                
-                SoundItemContainer {
-                    required property var modelData
-                    required property int index
-                    
-                    property var _soundInfo: AmbientSoundsService.availableSounds.find((s) => s.id === modelData.id)
-                    
-                    soundId: modelData.id
-                    soundVolume: modelData.volume
-                    playerPlaying: AmbientSoundsService.activeSounds[index]?.isPlaying ?? false
-                    effectivePlaying: (AmbientSoundsService.activeSounds[index]?.isPlaying ?? false) && !AmbientSoundsService.masterPaused
-                    soundInfo: _soundInfo ?? null
-                    isMaster: false
-                    isActive: true
-                    visible: _soundInfo !== null && _soundInfo !== undefined
-                }
+            model: AmbientSoundsService.states.activeSounds
+            delegate: SoundItemContainer {
+                required property var modelData
+                required property int index
+                property var _soundInfo: AmbientSoundsService.states.availableSounds.find(s => s.id === modelData.id)
+                height: 72
+                topRadius: index === 0 ? Rounding.verylarge : Rounding.tiny
+                bottomRadius: index === AmbientSoundsService.states.activeSounds.length - 1 ? Rounding.verylarge : Rounding.tiny
+                anchors.right: parent?.right
+                anchors.left: parent?.left
+                soundId: modelData.id
+                soundVolume: modelData.volume
+                playerPlaying: modelData.isPlaying ?? false
+                effectivePlaying: (modelData.isPlaying ?? false) && !AmbientSoundsService.states.masterPaused
+                soundInfo: _soundInfo ?? null
+                isMaster: false
+                isActive: true
+            }
+            PagePlaceholder {
+                z: -1
+                anchors.centerIn: parent
+                shown: AmbientSoundsService.states.activeSounds.length === 0
+                icon: "relax"
+                title: "There are no Active Sounds"
+                description: "Swipe below to show available sounds"
             }
         }
-        
-        Spacer {}
     }
-    
     BottomDialog {
         enableStagedReveal: true
         bottomAreaReveal: true
         hoverHeight: 200
-        collapsedHeight: 400
-        expandedHeight: parent.height * 0.75
+        collapsedHeight: parent.height * 0.6
         contentItem: AvilableSoundsList {}
     }
 }

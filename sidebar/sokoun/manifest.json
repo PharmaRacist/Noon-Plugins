@@ -2,6 +2,9 @@
   "name": "Sokoun",
   "mentainer": "PharmaRacist",
   "entry": "@plugins/Ambients.qml",
+  "singletons": [
+    "AmbientSoundsService.qml"
+  ],
   "enabled": true,
   "icon": "equalizer",
   "expandable": false,
