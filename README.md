@@ -6,16 +6,17 @@
 - [ ] Singletons
 - [x] Color Palettes
 - [x] Sidebar Modules (adds new sidebar contents)
+- [x] Dock
 - [ ] Plugins gui easy installer
-- [ ] Desktop Widgets --- KDE API Workarounds
+  - [x] cli backend 
+- [ ] Desktop Widgets --- KDE API Workarounds (if possible)
 - [ ] Bars
 - [ ] Bar Modules
 - [ ] Dialog Components
 - [ ] Routines
-- [ ] Ambient Sounds
 - [ ] AI Skills - Functions
 - [ ] Complete Panels Alterations
-
+- [ ] Persistance workarounds
 ## Plugins list
 check out: https://github.com/pharmaracist/Noon-plugins
 ### Sidebar
@@ -25,7 +26,9 @@ check out: https://github.com/pharmaracist/Noon-plugins
 - [x] Quickshare
 - [x] Sokoun (Ambient Sounds)
 - [x] Radio
-
+### Dock
+- [x] Timers
+- [x] Media 
 ## Directories Integrity
 All plugins are inside `~/.noon_plugins/`.
 - every panel has different sub directory eg, ../sidebar, ../palettes, etc
