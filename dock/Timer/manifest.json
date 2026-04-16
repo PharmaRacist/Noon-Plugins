@@ -1,0 +1,6 @@
+{
+  "name": "Timer",
+  "mentainer": "PharmaRacist",
+  "entry": "@plugins/Timer.qml",
+  "enabled": true
+}

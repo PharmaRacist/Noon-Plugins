@@ -1,5 +1,4 @@
-module games
-
+module Games
 GameLauncherAddDialog 1.0 GameLauncherAddDialog.qml
-GameLauncherItem      1.0 GameLauncherItem.qml
-Games                 1.0 Games.qml
+GameLauncherItem 1.0 GameLauncherItem.qml
+Games 1.0 Games.qml

@@ -8,9 +8,5 @@
   "incubatable": false,
   "detachable": true,
   "searchable": false,
-  "preExpand": false,
-  "baseSize": 480,
-  "expandSize": 800,
-  "stealth": false,
   "shape": "Slanted"
 }

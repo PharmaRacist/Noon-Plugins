@@ -8,9 +8,7 @@
   "incubatable": true,
   "detachable": true,
   "searchable": true,
-  "preExpand": false,
   "async": true,
   "on_accepted_only": true,
-  "stealth": false,
   "shape": "Slanted"
 }

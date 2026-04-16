@@ -1,0 +1,7 @@
+{
+  "name": "Media",
+  "mentainer": "PharmaRacist",
+  "entry": "@plugins/Media.qml",
+  "enabled": true,
+  "direction": "left"
+}
