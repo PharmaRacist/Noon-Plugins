@@ -1,0 +1,13 @@
+{
+  "name": "echo and copy",
+  "mentainer": "Pharmaracist",
+  "enabled": true,
+  "prefix": "@",
+  "icon": "dashboard",
+  "shape": "Cookie6Sided",
+  "placeholder": "Hello World",
+  "showHint": true,
+  "showOsrButton": false,
+  "hinter": "() => { shell('echo \"$q\"'); return activeHint; }",
+  "executor": "() => exec('wl-copy \"$q\"')"
+}

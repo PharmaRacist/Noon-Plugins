@@ -14,6 +14,9 @@
 - [x] Color Palettes
 - [x] Sidebar Modules (adds new sidebar contents)
 - [x] Dock
+- [x] Beam
+  - [x] Bash Commands
+  - [x] Qml Functions
 - [ ] Plugins gui easy installer
   - [x] cli backend 
 - [ ] Desktop Widgets --- KDE API Workarounds (if possible)
@@ -79,3 +82,29 @@ those are files inside the "palettes" in format `${PALETTE_NAME}.json`
 ### Dock Plugins
 - each plugin is a component runs inside the dock needs an entry direction according to the dockapps in order to be replicated
 - see docks example
+
+### Beam Plugins
+- check beam manifest example
+
+## Hinter & Executor
+Both are **arrow function strings** evaluated at load time. They run with access to:
+ 
+| Name | Description |
+|---|---|
+| `cleanQuery` | Current input without prefix |
+| `activeHint` | Current hint value (readable + writable) |
+| `activeState` | Current active state key |
+| `exec(cmd)` | Fire and forget shell command |
+| `shell(cmd, cb?)` | Run shell command, result lands in `activeHint` |
+ 
+---
+## Query Placeholders
+ 
+| Placeholder | Resolved at | Use in |
+|---|---|---|
+| `%q` | Build time → `ctx.cleanQuery` | JS code position |
+| `$q` | Call time inside `exec`/`shell` | Shell command strings |
+ 
+- `shell` is debounced by query — if `cleanQuery` hasn't changed the command won't re-run
+- For `executor` prefer `exec` over `shell` unless you need the output
+- Plugins are merged into the registry after built-in states — they can override by using the same key
