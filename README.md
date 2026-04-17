@@ -13,8 +13,10 @@
   - [ ] Persistence Convenient Solution
 - [x] Color Palettes
 - [x] Sidebar Modules (adds new sidebar contents)
+- [x] Dock
 - [ ] Plugins gui easy installer
-- [ ] Desktop Widgets --- KDE API Workarounds
+  - [x] cli backend 
+- [ ] Desktop Widgets --- KDE API Workarounds (if possible)
 - [ ] Bars
   - [ ] Bar Modules
   - [ ] Bar (v/h)Map Presets for Dynamic bars
@@ -23,7 +25,7 @@
 - [x] ~New Ambient Sounds~ 
 - [ ] AI Skills - Functions
 - [ ] Complete Panels Alterations
-
+- [ ] Persistance workarounds
 ## Plugins list
 ### Dock 
 DockNatives
@@ -40,7 +42,6 @@ Other Components
 - [x] Quickshare
 - [x] Sokoun (Ambient Sounds)
 - [x] Radio
-
 ## Noon IPC
 - this is the trigger for shell to know exactly when to behave
 - currently it has a global plugins reload 
