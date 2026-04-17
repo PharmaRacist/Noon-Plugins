@@ -1,23 +1,38 @@
+<p align="center">
+  <img src=".assets/logo.svg" alt="Project logo" width="280">
+</p>
+
 <h1 align="center"> Plugins </h1>
 # This is very "Ambitious" yet very early stage plugins system and a very new concept for me ^^
 
-## Roadmap
+## Current State - RoadMap
 - [-] Docs
-- [ ] Singletons
+  - [ ] ~Website~ ?
+- [ ] Hot Reload
+- [X] Singletons
+  - [ ] Persistence Convenient Solution
 - [x] Color Palettes
 - [x] Sidebar Modules (adds new sidebar contents)
 - [ ] Plugins gui easy installer
 - [ ] Desktop Widgets --- KDE API Workarounds
 - [ ] Bars
-- [ ] Bar Modules
+  - [ ] Bar Modules
+  - [ ] Bar (v/h)Map Presets for Dynamic bars
 - [ ] Dialog Components
-- [ ] Routines
-- [ ] Ambient Sounds
+- [ ] Routines - Automations
+- [x] ~New Ambient Sounds~ 
 - [ ] AI Skills - Functions
 - [ ] Complete Panels Alterations
 
 ## Plugins list
-check out: https://github.com/pharmaracist/Noon-plugins
+### Dock 
+DockNatives
+- [x] Timers
+- [x] Media
+- [ ] Weather
+Other Components 
+- [ ] Bar Modules
+
 ### Sidebar
 - [x] Games
 - [x] Web
@@ -26,9 +41,28 @@ check out: https://github.com/pharmaracist/Noon-plugins
 - [x] Sokoun (Ambient Sounds)
 - [x] Radio
 
-## Directories Integrity
+## Noon IPC
+- this is the trigger for shell to know exactly when to behave
+- currently it has a global plugins reload 
+- noon ipc call plugins reload reloads all
+- run `noon ipc call plugins show` for avilable actions
+
+## nplugins (The Cli)
+- the script that manages plugins adding removal enabling disabling qmldir creation and manifest.json processing 
+- usage example npluins enable group plugin's folder name 
+  -f to force action
+
+## Directories Integrity and Plugins Creation
 All plugins are inside `~/.noon_plugins/`.
-- every panel has different sub directory eg, ../sidebar, ../palettes, etc
+- for the path u need to add prefix `@plugins` for the shell imports to work and use normal qs imports
+- every panel has different group eg, ../sidebar, ../palettes, etc
+- each plugin has to be in a different folder with explicitly named manifest.json
+- i dont advice bundling plugins in different subfolders for how inconvenient it can get with qmldir stuff ~Current State Only~
+- qml js engine doesn't pick the imports of the non-siblings this means qmldir has to be created in each subdir recruisively while cli install them
+
+### Singletons
+- Singletons are defined explicitly in an array in manifest.json (This is Crucial for qmldir creation and initialization)
+- Singletons Are treated as first class citizens you basically develop as native qs project
 
 ### Color Palettes
 those are files inside the "palettes" in format `${PALETTE_NAME}.json` 
@@ -37,7 +71,10 @@ those are files inside the "palettes" in format `${PALETTE_NAME}.json`
 - json keys are material3 colors with m3prefixed camel case check plugins/palettes/example.json
 
 ### Sidebar Plugins
-- each plugin has to be in a different folder with explicitly named manifest.json
+- This adds new sidebar content pages 
+- you can define all needed behaviors for a typical sidebar module
 - check the plugins/sidebar/manifest.json
-- for the path u need to add prefix `@plugins` for the shell imports to work and use normal qs imports
-- qml js engine doesn't pick the imports of the non-siblings this means that script will inject an import "./" string in main entry qml and qmldir in each subdir recruisively in install time
+
+### Dock Plugins
+- each plugin is a component runs inside the dock needs an entry direction according to the dockapps in order to be replicated
+- see docks example
