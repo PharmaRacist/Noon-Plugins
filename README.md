@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/logo.svg" alt="Project logo" height="280" width="280">
+  <img src="./assets/logo.svg" alt="Project logo" height="1024" width="1024">
 </p>
 
 <h1 align="center"> Plugins </h1>
